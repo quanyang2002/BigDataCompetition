@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:1500px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'歌曲播放量统计'
+        },
+        legend:{
+            orient:'horizontal',
+            left:'center',
+            data:['上月播放次数','本月播放次数','总排放量']
+        },
+        xAxis:{
+            type:'category',
+            data:{{songs | tojson}}
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[
+            {
+                name:'上月播放次数',
+                type:'bar',
+                data:{{shangyue | tojson}}
+            },
+            {
+                name:'本月播放次数',
+                type:'bar',
+                data:{{benyue | tojson}}
+            },
+            {
+                name:'总排放量',
+                type:'bar',
+                data:{{zongpaifang | tojson}}
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

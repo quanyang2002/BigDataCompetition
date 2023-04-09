@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="./echarts.min.js"></script>
+ </head>
+ <body>
+  <div id="main" style="width:600px;height:600px;"></div>
+  <script type="text/javascript">
+	mychart = echarts.init(document.getElementById('main'));
+	var option={
+		title:{
+			text:'这是主标题',
+			subtext:'这是从标题',
+			left:'left',
+			top:'top',
+			show:true
+		},
+		tooltip:{
+			trigger:'axis',
+			axisPointer:{
+				type:'line'
+			}
+		},
+		toolbox:{
+			show:true,
+			feature:{
+				mark:{show:true},
+				dataView:{show:true,readOnly:false},
+				magicType:{show:true,type:['line','bar']},
+				restore:{show:true},
+				saveAsImage:{show:true}
+			}
+		},
+		legend:{
+			show:true,
+			data:['销量']
+			
+		},
+		xAxis:{
+			type:'category',
+			name:'商品类型',
+			position:'top',
+			data:['A','B','C'],
+			nameLocation:'middle'
+		},
+		yAxis:[{
+			name:'销量',
+			type:'value',
+			position:'right'
+		},
+		{
+			name:'推销数量',
+			type:'value',
+			position:'left'
+		}],
+		series:[
+		{
+			name:'销量',
+			type:'bar',
+			data:[1,7,2]
+		}
+		]
+	};
+	mychart.setOption(option);
+  </script>
+ </body>
+</html>

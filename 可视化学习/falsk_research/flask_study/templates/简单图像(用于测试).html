@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../sources/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+    title:{
+        text:'主标题'，
+        subtext:'副标题'
+    }，
+    xAxis:{
+        data:['A','B','C']
+    },
+    yAxis:{
+        type:'value'
+    },
+    series:[{
+        type:'line',
+        data:[10,230,100]
+    }]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

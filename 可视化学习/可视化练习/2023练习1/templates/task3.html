@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'每日碳计算工具模块访问次数'
+        },
+        xAxis:{
+            name:'日期',
+            nameLocation:'middle',
+            type:'category',
+            data:{{task3_x | tojson}},
+            axisLabel:{
+                rotate:40
+            }
+        },
+        yAxis:{
+            name:'访问次数',
+            nameLocation:'middle',
+            type:'value'
+        },
+        series:[
+            {
+                type:'bar',
+                data:{{task3_y | tojson}},
+                label:{
+                    show:true,
+                    position:'insideTop'
+                }
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

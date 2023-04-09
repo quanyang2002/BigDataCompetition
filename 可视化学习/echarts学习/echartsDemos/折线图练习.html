@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="../echarts.min.js"></script>
+ </head>
+ <body>
+  <div id="main" style="height:1000px;width:1000px"></div>
+  <script type="text/javascript">
+  var mychart=echarts.init(document.getElementById("main"));
+  var option={
+	xAxis:{
+		type:"category",
+		data:["南京","淮安","连云港"],
+		boundaryGap:false
+	},
+	yAxis:{
+		type:"value"
+	},
+	series:[{
+		type:"line",
+		data:[40.4,35.5,37.4],
+		smooth:true,
+		areaStyle:{}
+	}]
+  };
+  mychart.setOption(option);
+  </script>
+ </body>
+</html>

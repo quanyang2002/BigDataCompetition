@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<!--视图层代码-->
+<div id="app">
+    <todo>
+        <todo-title slot="todo-title" v-bind:title="title"></todo-title>
+        <todo-items slot="todo-items" v-for="item in todoItems" v-bind:item="item"></todo-items>
+    </todo>
+</div>
+
+<script>
+    // slot:插槽
+    Vue.component("todo",{
+        template:"<div>\
+        <slot name='todo-title'></slot>\
+        <ul>\
+            <slot name='todo-items'></slot>\
+        </ul>\
+        </div>"
+    });
+    Vue.component("todo-title",{
+        //props 接收参数
+        props:['title'],
+        template:"<div>{{title}}</div>"
+    });
+    Vue.component("todo-items",{
+        props:['item','index'],
+        // 只能绑定当前组件的方法
+        template:"<li>{{item}}<button @click='remove'>删除</button></li>",
+        methods:{
+            remove:function () {
+                alert("111");
+
+            }
+        }
+    });
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            title:"course",
+            todoItems:['java','python','c++']
+        },
+        methods:{
+            removeItems:function(index){
+                console.log("删除了"+this.todoItems[index]+"OK");
+                this.todoItems.splice(index,1);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

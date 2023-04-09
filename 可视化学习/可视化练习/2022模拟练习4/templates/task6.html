@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'各区域低中高层数量情况'
+        },
+        legend:{
+            data:['低层','中层','高层']
+        },
+        xAxis:{
+            type:'category',
+            data:{{task6_x | tojson}}
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[
+            {
+                name:'低层',
+                type:'bar',
+                color:'green',
+                stack:'房屋总值',
+                data:{{task6_diceng | tojson}}
+            },
+            {
+                name:'中层',
+                type:'bar',
+                color:'red',
+                stack:'房屋总值',
+                data:{{task6_zhongceng | tojson}}
+            },
+            {
+                name:'高层',
+                type:'bar',
+                color:'yellow',
+                stack:'房屋总值',
+                data:{{task6_gaoceng | tojson}}
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

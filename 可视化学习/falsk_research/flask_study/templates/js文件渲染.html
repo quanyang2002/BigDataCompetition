@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js文件渲染</title>
+    <script src="{{url_for('static',filename='echarts.min.js')}}"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+<script type="text/javascript">
+    {{echart_script}}
+</script>
+</body>
+</html>

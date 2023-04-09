@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+<script type="text/javascript">
+    var chart = echarts.init(document.getElementById("main"));
+    var option = {
+        xAxis:{
+            type:'category',
+            data:{{date | tojson}}
+        },
+        yAxis:{
+            type:'value',
+        },
+        legend:{
+            data:['A产品销量','B产品销量','C产品销量'],
+            left:'right'
+        },
+        tooltip:{
+            trigger:'axis',
+            axisPointer:{
+                type:'cross',
+                label:{
+                    backgroundColor:'#6a7985'
+                }
+            }
+        },
+        series:[
+        {
+            name:'A产品销量',
+            data:{{data | tojson}},
+            type:'line',
+            smooth:true,
+            stack:'总量',
+            areaStyle:{}
+        },
+        {
+            name:'B产品销量',
+            data:{{data1 | tojson}},
+            type:'line',
+            smooth:true,
+            stack:'总量',
+            areaStyle:{}
+        },
+        {
+            name:'C产品销量',
+            data:{{data2 | tojson}},
+            type:'line',
+            smooth:true,
+            stack:'总量',
+            areaStyle:{},
+            label:{
+                normal:{
+                    show:true,
+                    position:'top'
+                }
+            }
+        }
+        ]
+    };
+    chart.setOption(option);
+</script>
+</body>
+</html>

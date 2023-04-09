@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../static/echarts.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        xAxis:{
+            type:'category',
+            data:{{task2_x | tojson}}
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[{
+            type:'bar',
+            data:{{task2_y | tojson}}
+        }]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

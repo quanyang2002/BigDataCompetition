@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../echarts.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" style="width: 600px;height: 400px;"></div>
+    <script type="text/javascript">
+        var mychart = echarts.init(document.getElementById("main"));
+        var option = {
+            title : {
+                text:'这是主标题',
+                subtext:'这是副标题',
+                show:true,
+                left:'center'//居中显示
+            },
+            tooltip:{
+                trigger:'axis',
+                axisPointer:{
+                    type:'shadow'
+                },
+                show:true
+            },
+            toolbox:{
+                show:true,
+                feature:{
+                    mark:{show:true},
+                    dataView:{show:true,readOnly:false},
+                    magicType:{show:true,type:['line','bar']},
+                    restore:{show:true},
+                    saveAsImage:{show:true}
+                }
+            },
+            legend:{
+                data:['销量'],
+                left:'left',
+                show:true
+            },
+            xAxis:{
+                data:["产品A","产品B","产品C","产品D","产品E"]
+            },
+            yAxis:{},
+            series:[{
+                name:'销量',
+                type:'bar',
+                data:[900,700,200,333,1000]
+            }]
+        };
+        mychart.setOption(option);
+    </script>
+</body>
+</html>

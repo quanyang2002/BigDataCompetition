@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="./echarts.min.js"></script>
+ </head>
+ <body>
+ <div id="main" style="width:500px;height:500px;"></div>
+ <script>
+	var mychart = echarts.init(document.getElementById("main"));
+	var option = {
+		title:{
+			text:"雷达图"
+		},
+		radar:{
+			indicator:[
+				{name:"项目1",max:100},
+				{name:"项目2",max:100},
+				{name:"项目3",max:100},
+				{name:"项目4",max:100},
+				{name:"项目5",max:100}
+			]
+		},
+		series:[
+			{
+				type:"radar",
+				data:[
+					{name:"商品1",value:[10,50,20,60,10]},
+					{name:"商品2",value:[20,70,90,30,20]}
+				]
+			}
+		]
+	}
+	mychart.setOption(option);
+ </script>
+ </body>
+</html>

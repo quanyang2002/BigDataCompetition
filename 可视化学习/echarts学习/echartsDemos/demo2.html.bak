@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="gbk">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>echarts入门</title>
+  <script src="../echarts.min.js"></script>
+ </head>
+ <body>
+ <div id="main" style="width:500px;height:500px"></div>
+ <script type="text/javascript">
+	var mychart = echarts.init(document.getElementById("main"));
+	var option={
+		title:{
+			text:"echarts 入门案例"
+		},
+		tooltip:{},
+		legend:{
+			data:['销量']
+		},
+		xAxis:{
+			data:['python','java','c']
+		},
+		yAxis:{},
+		series:[{
+			name:"销量",
+			type:"bar",
+			data:[1,2,3]
+		}]
+	};
+	mychart.setOption(option);
+ </script>
+  
+ </body>
+</html>

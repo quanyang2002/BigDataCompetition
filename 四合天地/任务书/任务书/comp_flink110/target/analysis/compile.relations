@@ -1,0 +1,12 @@
+products:
+   D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\src\main\scala\WatermarkTest.scala -> D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\target\classes\WatermarkTest$.class
+   D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\src\main\scala\WatermarkTest.scala -> D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\target\classes\WatermarkTest.class
+binary dependencies:
+   D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\src\main\scala\WatermarkTest.scala -> C:\Users\Administrator\.m2\repository\org\apache\flink\flink-streaming-scala_2.11\1.10.2\flink-streaming-scala_2.11-1.10.2.jar
+   D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\src\main\scala\WatermarkTest.scala -> C:\Users\Administrator\.m2\repository\org\scala-lang\scala-library\2.11.0\scala-library-2.11.0.jar
+   D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\src\main\scala\WatermarkTest.scala -> D:\javase8\jre\lib\rt.jar
+source dependencies:
+external dependencies:
+class names:
+   D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\src\main\scala\WatermarkTest.scala -> WatermarkTest
+   D:\学习\大数据\技能大赛\四合天地\任务书\任务书\comp_flink110\src\main\scala\WatermarkTest.scala -> WatermarkTest$

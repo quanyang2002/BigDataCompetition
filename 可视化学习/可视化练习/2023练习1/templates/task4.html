@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:1000px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'前20位活跃用户累计访问次数'
+        },
+        xAxis:{
+            name:'用户名',
+            nameLocation:'middle',
+            type:'category',
+            data:{{task4_x | tojson}},
+            axisLabel:{
+                rotate:40
+            }
+        },
+        yAxis:{
+            name:'访问次数',
+            nameLocation:'middle',
+            type:'value'
+        },
+        series:[
+            {
+                type:'bar',
+                data:{{task4_y | tojson}},
+                label:{
+                    show:true,
+                    position:'insideTop'
+                }
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

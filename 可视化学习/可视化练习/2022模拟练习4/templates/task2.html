@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:8000px;height:700px;"></div>
+<script type="text/javascript">
+  var mychart = echarts.init(document.getElementById('main'));
+  var option = {
+        title:{
+          text:'各小区二手房均价',
+          left:'center'
+        },
+        xAxis:{
+          name:'小区名称',
+          nameLocation:'center',
+          type:'category',
+          data:{{task2_x | tojson}}
+        },
+        yAxis:{
+          name:"每平米价格(单位:万元)",
+          type:'value',
+          nameLocation:'end'
+        },
+        series:[
+          {
+            type:'bar',
+            data:{{task2_y | tojson}}
+          }
+        ]
+  };
+  mychart.setOption(option);
+</script>
+</body>
+</html>

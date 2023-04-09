@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'各发行公司歌曲数量占比',
+            left:'center'
+        },
+        xAxis:{},
+        yAxis:{},
+        legend:{
+            orient:'horizontal',
+            top:'bottom',
+            data:{{legend | tojson}}
+        },
+        series:[
+            {
+                name:'歌曲数量',
+                type:'pie',
+                data:{{data | tojson}}
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

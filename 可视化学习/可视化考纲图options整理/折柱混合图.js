@@ -1,0 +1,36 @@
+var option = {
+	title:{
+		text:'折柱混合图'
+	},
+	legend:{
+		data:['数据指标1','数据指标2']
+	},
+	xAxis:{
+		type:'category',
+		data:['x轴刻度名称1','x轴刻度名称2']
+	},
+	yAxis:[
+			{
+				type:'value',
+				position:'left'
+			},
+			{
+				type:'value',
+				position:'right'
+			}
+	],
+	series:[
+		{
+			name:'数据指标1',
+			type:'bar',
+			yAxisIndex:0,
+			data:[数据指标1在x轴刻度名称1的表现,数据指标1在x轴刻度名称2的表现]
+		},
+		{
+			name:'数据指标2',
+			type:'line',
+			yAxisIndex:1,
+			data:[数据指标2在x轴刻度名称1的表现,数据指标2在x轴刻度名称2的表现]
+		}
+	]
+}

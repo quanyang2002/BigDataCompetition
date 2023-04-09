@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'使用平台最多的20个城市'
+        },
+        xAxis:{
+            name:'城市名称',
+            nameLocation:'middle',
+            type:'category',
+            data:{{task5_x | tojson}},
+            axisLabel:{
+                rotate:40
+            }
+        },
+        yAxis:{
+            name:'使用次数',
+            nameLocation:'middle',
+            type:'value'
+        },
+        series:[
+            {
+                type:'bar',
+                data:{{task5_y | tojson}},
+                label:{
+                    show:true,
+                    position:'insideTop'
+                }
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

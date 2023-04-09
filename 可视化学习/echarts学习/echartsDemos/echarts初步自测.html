@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--引入echarts-->
+    <script src="../echarts.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--声明画布div-->
+    <div id="main" style="width:500px;height:500px;"></div>
+    <!--编写js代码-->
+    <script type="text/javascript">
+        // 实例化一个echarts对象
+        var mychart = echarts.init(document.getElementById('main'));
+        // 编写图表相关配置
+        var option = {
+            // 标题组件
+            title : {
+                text:"这是主标题",
+                subtext:"这是从标题",
+                left:'center',
+                show:true
+            },
+            tooltip : {
+                show : true,
+                trigger : 'item',
+                axisPointer:{
+                    type:'cross'
+                }                
+            },
+            toolbox : {
+                show:true,
+                feature : {
+                    mark:{show:true},
+                    saveAsImage:{show:true},
+                    restore:{show:true},
+                    magicType:{show:true,type:['line','bar']},
+                    dataView:{show:true,readOnly:false}
+                }
+            },
+            legend : {
+                left : 'center',
+                top : 'middle',
+                orient : 'vertical',
+            },
+            xAxis : {
+              data:['产品1','产品2','产品3']                  
+            },
+            yAxis : {
+            },
+            series : [
+                {
+                    name:'进口量',
+                    type : 'bar',
+                    data : [300,100,150]
+                },
+                {
+                    name:'出口量',
+                    type : 'bar',
+                    data : [250,50,130]
+                }
+            ],
+            
+            
+        };
+        // 将编写好的配置应用于我们事先实例化好的echarts对象
+        mychart.setOption(option);
+    </script>
+</body>
+</html>

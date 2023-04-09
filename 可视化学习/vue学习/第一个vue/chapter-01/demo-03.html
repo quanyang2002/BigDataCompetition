@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- vue cdn 导入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <li v-for='(item,index) in items'>
+        {{item.message}}--{{index}}
+    </li>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            items:[
+                {message:'zhangsan'},
+                {message:'lisi'},
+                {message:'wangwu'}
+            ]
+        }
+    });
+</script>
+
+</body>
+</html>

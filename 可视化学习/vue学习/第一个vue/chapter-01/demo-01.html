@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- vue cdn 导入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<!-- view 层 -->
+<div id="app">
+    <span v-bind:title="message">
+        鼠标停留此处显示提示信息！！
+    </span>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:"#app",
+        // model : 数据
+        data:{
+            message:"hello,vue!"
+        }
+    });
+</script>
+</body>
+</html>

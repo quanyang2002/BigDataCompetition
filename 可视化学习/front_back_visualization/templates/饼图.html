@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        legend:{
+            orient:'horizontal',
+            data:['商品1','商品2','商品3']
+        },
+        series:[
+        {
+            name:'销量',
+            type:'pie',
+            radius:['40%','55%'],
+            data:[
+            {name:'商品1',value:50},
+            {name:'商品2',value:30},
+            {name:'商品3',value:20}]
+        }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div>{{info.name}}</div>
+    <div>{{info.page}}</div>
+    <a v-bind:href="info.url"></a>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data(){
+            return {
+                // 请求返回参数的结构必须和返回内容结构一样
+                info:{
+                    name:null,
+                    url:null,
+                    page:null
+                }
+            }
+        },
+        mounted(){//钩子函数 链式编程
+            axios.get('../data.json').then(response=>(this.info=response.data));
+        }
+    });
+</script>
+
+</body>
+</html>

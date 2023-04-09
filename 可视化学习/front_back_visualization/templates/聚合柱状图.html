@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../static/echarts.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'产品一周销量情况'
+        },
+        xAxis:{
+            type:'category',
+            data:{{juhezhu_xzhou | tojson}}
+        },
+        yAxis:{
+            type:'value'
+        },
+        legend:{
+            data:['A产品','B产品']
+        },
+        series:[
+            {
+                name:'A产品',
+                data:{{juhezhu_data_a | tojson}},
+                type:'bar',
+                label:{
+                    show:true,
+                    position:'top'
+                }
+            },
+            {
+                name:'B产品',
+                data:{{juhezhu_data_b | tojson}},
+                type:'bar',
+                label:{
+                    show:true,
+                    position:'top'
+                }
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

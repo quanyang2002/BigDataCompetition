@@ -1,0 +1,23 @@
+var option = {
+	title:{
+		text:'折线图'
+	},
+	legend:{
+		data:['对象1','对象2',...]
+	},
+	xAxis:{
+		type:'category',
+		data:['x轴时间点1','x轴时间点2',...]
+	},
+	yAxis:{
+		type:'value'
+	},
+	series:[
+		{
+			name:'对象1',
+			type:'line',
+			data:[对象1在x轴时间点1的数据,对象1在x轴时间点2的数据,...]
+		},
+			...
+	]
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!--第一步 引入echarts包-->
+  <script src="../echarts.min.js"></script>
+ </head>
+ <body>
+ <!--第二步 定义一块画布-->
+  <div id="main" style="width:400px;height:400px"></div>
+  <!--第三步 定义js代码块-->
+  <script type="text/javascript">
+    <!--第四步 初始化自己的echarts并指定其所在画布-->
+	var mychart = echarts.init(document.getElementById("main"));
+	<!--配置图像具体显示内容-->
+	var option={
+		
+	}
+	<!--将定义好的配置应用于自己的echart-->
+	mychart.setOption(option);
+  </script>
+ </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'各城市推单总数占比情况'
+        },
+        legend:{
+            left:'center',
+            top:'bottom',
+            data:{{task5_x | tojson}}
+        },
+        xAxis:{},
+        yAxis:{},
+        series:[
+            {
+                type:'pie',
+                data:{{task5_y | tojson}}
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

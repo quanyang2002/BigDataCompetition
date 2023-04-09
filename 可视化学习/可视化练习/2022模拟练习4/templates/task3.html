@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'前五个热门户型均价'
+        },
+        xAxis:{
+            type:'value',
+            name:'户型均价(单位:万元)',
+            nameLocation:'end'
+        },
+        yAxis:{
+            type:'category',
+            name:'户型',
+            data:{{task3_x | tojson}}
+        },
+        series:[
+            {
+                type:'bar',
+                data:{{task3_y | tojson}},
+                label:{
+                    show:true,
+                    position:'right',
+                    color:'blue'
+                }
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+
+</body>
+</html>

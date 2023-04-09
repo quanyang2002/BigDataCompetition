@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'各风格歌曲数量统计'
+        },
+        xAxis:{
+            type:'value'
+        },
+        yAxis:{
+            type:'category',
+            data:{{styles | tojson}}
+        },
+        series:[{
+            type:'bar',
+            data:{{data | tojson}}
+        }]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

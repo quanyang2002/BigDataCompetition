@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'各个城市餐饮行业服务情况对比'
+        },
+        xAxis:{
+            name:'城市名称',
+            type:'category',
+            data:{{task3_x | tojson}}
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[
+            {
+                name:'平均服务水平',
+                type:'bar',
+                data:{{task3_y | tojson}}
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

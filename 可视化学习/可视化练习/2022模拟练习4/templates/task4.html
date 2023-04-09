@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:500px;"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'各小区精装简修毛坯房数量对比'
+        },
+        legend:{
+            data:['精装修','简装修','毛坯']
+        },
+        xAxis:{
+            name:'小区名称',
+            nameLocation:'start',
+            type:'category'
+        },
+        yAxis:{
+            name:'房屋数量',
+            nameLocation:'end',
+            type:'value'
+        },
+        series:[
+            {
+                name:'精装修',
+                type:'bar',
+                data:{{task4_jingzhuang | tojson}}
+            },
+            {
+                name:'简装修',
+                type:'bar',
+                data:{{task4_jianzhuang | tojson}}
+            },
+            {
+                name:'毛坯',
+                type:'bar',
+                data:{{task4_maopi | tojson}}
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'餐厅聚集地理位置展示'
+        },
+        legend:{
+            data:['南京','北京','上海'],
+            orient:'horizontal',
+            left:'center',
+            top:'bottom'
+        },
+        xAxis:{},
+        yAxis:{},
+        series:[
+            {
+                type:'scatter',
+                name:'南京',
+                data:{{data_nanjin | tojson}},
+                symbolSize:function (data){
+                    return data[2];
+                }
+            },
+            {
+                type:'scatter',
+                name:'上海',
+                data:{{data_shanghai | tojson}},
+                symbolSize:function (data){
+                    return data[2];
+                }
+            },
+            {
+                type:'scatter',
+                name:'北京',
+                data:{{data_beijing | tojson}},
+                symbolSize:function (data){
+                    return data[2];
+                }
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+
+</body>
+</html>

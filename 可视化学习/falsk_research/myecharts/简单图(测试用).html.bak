@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="../sources/echarts.min.js"></script>
+  <title>Document</title>
+ </head>
+ <body>
+ <div id="main" style="width:500px;height:500px;"></div>
+ <script type="text/javascript">
+	var mychart = echarts.init(document.getElementById('main'));
+	var option = {
+		xAxis:{
+			data:['A','b','c']
+		},
+		yAxis:{
+			type:'value'
+		},
+		series:[
+		{
+			type:'line',
+			data:{{data}}
+		}]
+	};
+	mychart.setOption(option);
+ </script>
+  
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        xAxis:{
+            type:'category',
+            data:{{name | tojson}}
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[
+        {
+            name:'course_1',
+            type:'line',
+            data:{{course_1 | tojson}}
+        },
+        {
+            name:'course_2',
+            type:'line',
+            data:{{course_2 | tojson}}
+        },
+        {
+            name:'course_3',
+            type:'line',
+            data:{{course_3 | tojson}}
+        },
+        {
+            name:'course_4',
+            type:'line',
+            data:{{course_4 | tojson}}
+        },
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

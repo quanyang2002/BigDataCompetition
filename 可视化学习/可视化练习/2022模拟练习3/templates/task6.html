@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:500px;height:500px"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        title:{
+            text:'各城市餐厅好差评数量对比'
+        },
+        legend:{
+            orient:'vertical',
+            left:'right',
+            data:['好评数','差评数']
+        },
+        xAxis:{
+            name:'城市名称',
+            type:'category',
+            data:{{task6_x | tojson}}
+        },
+        yAxis:{
+            name:'评价总数',
+            type:'value'
+        },
+        series:[
+            {
+                name:'好评数',
+                stack:'评价总数',
+                type:'bar',
+                data:{{task6_haopin | tojson}}
+            },
+            {
+                name:'差评数',
+                stack:'评价总数',
+                type:'bar',
+                data:{{task6_chapin | tojson}}
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+</body>
+</html>

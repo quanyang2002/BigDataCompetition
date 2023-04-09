@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="../echarts.min.js"></script>
+ </head>
+ <body>
+ <div id="main" style="width:400px;height:400px"></div>
+ <script type="text/javascript">
+	var mychart = echarts.init(document.getElementById("main"));
+	var option = {
+		xAxis:{
+			type:"category",
+			boundaryGap:false,
+			data:["周一","周二","周三"]
+		},
+		yAxis:{
+			type:"value"
+		},
+		series:{
+			data:[3,2,3],
+			type:"line",
+			smooth:true,
+			areaStyle:{}
+		}
+	};
+	mychart.setOption(option);
+ </script>
+  
+ </body>
+</html>

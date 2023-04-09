@@ -1,0 +1,23 @@
+var option = {
+	title:{
+		text:'柱状图'
+	},
+	legend:{
+		data:['数据指标名称1','数据指标名称2']
+	},
+	xAxis:{
+		type:'category',
+		data:['x轴刻度名称1','x轴刻度名称2'...]
+	},
+	yAxis:{
+		type:'value'
+	},
+	series:[
+	{
+		name:'数据指标名称1',
+		type:'bar',
+		data:[y轴数据1,y轴数据2...]
+	}
+		...
+	]
+}

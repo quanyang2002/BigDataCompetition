@@ -1,0 +1,20 @@
+var option = {
+	title:{
+		text:'饼图'
+	},
+	legend:{
+		data:['占比名称1','占比名称2',...]
+	},
+	xAxis:{},
+	yAxis:{},
+	series:[
+		{
+			type:'pie',
+			data:[
+				{name:'占比名称1',value:占比名称1对应的数据},
+				{name:'占比名称2',value:占比名称2对应的数据},
+				...
+			]
+		}
+		]
+}

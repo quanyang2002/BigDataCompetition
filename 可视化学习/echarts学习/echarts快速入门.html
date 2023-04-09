@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="./echarts.min.js"></script>
+  <title>Document</title>
+ </head>
+ <body>
+  <div id="main" style="height:500px;width:500px"></div>
+  <script type="text/javascript">
+	var mychart=echarts.init(document.getElementById("main"));
+	var option={
+		xAxis:{
+			type:"category",
+			data:["语文","数学","英语"],
+			boundaryGap:false
+		},
+		yAxis:{
+			type:"value"
+		},
+		series:[
+		{
+			type:"line",
+			data:[100,85,96],
+			smooth:true,
+			areaStyle:{}
+		}
+		]
+	};
+	mychart.setOption(option);
+  </script>
+ </body>
+</html>

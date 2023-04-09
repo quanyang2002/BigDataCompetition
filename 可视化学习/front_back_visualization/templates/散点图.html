@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;height:600px"></div>
+<script type="text/javascript">
+    var mychart = echarts.init(document.getElementById('main'));
+    var option = {
+        xAxis:{},
+        yAxis:{},
+        series:[
+            {
+                type:'scatter',
+                data:[
+                    [1,0.4],
+                    [2,0.5],
+                    [3,0.5]
+                ]
+            }
+        ]
+    };
+    mychart.setOption(option);
+</script>
+
+
+</body>
+</html>

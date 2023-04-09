@@ -1,0 +1,33 @@
+var option = {
+	title:{
+		text:'散点图'
+	},
+	legend:{
+		data:['类别1','类别2',...]
+	},
+	xAxis:{},
+	yAxis:{},
+	series:[
+			{
+				name:'类别1',
+				type:'scatter',
+				data:[
+						[x1,y1],
+						[x2,y2],
+						[x3,y3],
+							...
+					]
+			},
+			{
+				name:'类别2',
+				type:'scatter',
+				data:[
+						[x1,y1],
+						[x2,y2],
+						[x3,y3],
+							...
+					]
+			},
+					...
+		]
+}

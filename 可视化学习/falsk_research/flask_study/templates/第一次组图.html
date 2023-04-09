@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/echarts.min.js"></script>
+</head>
+<body>
+<div id="div1" style="width:500px;height:500px;float:left;"></div>
+<div id="div2" style="width:500px;height:500px;float:left;"></div>
+<script type="text/javascript">
+    var mychart1 = echarts.init(document.getElementById('div1'));
+    var mychart2 = echarts.init(document.getElementById('div2'));
+    var option1 = {
+        title:{
+            text:'折线图'
+        },
+        xAxis:{
+            type:'category',
+            data:['A','B','C']
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[
+            {
+                type:'line',
+                data:[1,3,2]
+            }
+        ]
+    };
+    var option2 = {
+        title:{
+            text:'柱状图'
+        },
+        xAxis:{
+            type:'category',
+            data:['A','B','C']
+        },
+        yAxis:{
+            type:'value'
+        },
+        series:[
+            {
+                type:'bar',
+                data:[1,3,2]
+            },
+            {
+                type:'line',
+                data:[1,3,2]
+            }
+        ]
+    };
+    mychart1.setOption(option1);
+    mychart2.setOption(option2);
+</script>
+
+</body>
+</html>
